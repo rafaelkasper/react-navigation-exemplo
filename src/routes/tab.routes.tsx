@@ -7,12 +7,22 @@ const Tab = createBottomTabNavigator();
 
 export const TabRoutes = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#fff",
+        tabBarActiveBackgroundColor: "#0077b6",
+        tabBarInactiveBackgroundColor: "#48cae4",
+        tabBarInactiveTintColor: "#000",
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={StackRoutes}
         options={{
-          tabBarIcon: () => <MaterialIcons name="home" size={30} color="red" />,
+          tabBarIcon: () => (
+            <MaterialIcons name="home" size={30} color="#7209b7" />
+          ),
         }}
       />
       <Tab.Screen
@@ -20,7 +30,7 @@ export const TabRoutes = () => {
         component={Configurations}
         options={{
           tabBarIcon: () => (
-            <MaterialIcons name="settings" size={30} color="red" />
+            <MaterialIcons name="settings" size={30} color="#7209b7" />
           ),
         }}
       />
