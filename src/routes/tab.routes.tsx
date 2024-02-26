@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StackRoutes } from "./stack.routes";
 import { MaterialIcons } from "@expo/vector-icons";
 import Configurations from "../screens/Configurations";
+import Cart from "../screens/Cart";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +32,15 @@ export const TabRoutes = () => {
         options={{
           tabBarIcon: () => (
             <MaterialIcons name="settings" size={30} color="#7209b7" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          tabBarIcon: () => (
+            <MaterialIcons name="shop" size={30} color="#7209b7" />
           ),
         }}
       />

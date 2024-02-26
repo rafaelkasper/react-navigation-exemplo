@@ -14,6 +14,7 @@ const Details = ({ navigation }: DetailsStackProps) => {
         <Text style={styles.description}>Descrição: {product.description}</Text>
         <Text style={styles.description}>Valor: {product.cost}</Text>
         <Button title="Voltar" onPress={() => navigation.goBack()} />
+        <Text></Text>
         <Button
           title="Adicionar ao carrinho"
           onPress={() => insertCart(product)}
