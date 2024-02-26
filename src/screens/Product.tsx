@@ -1,8 +1,15 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { ProductStackProps } from "../types/navigation";
 import { Product as ProductType } from "../types/product";
+import { useContext } from "react";
+import {
+  ProductContext,
+  ProductContextProvider,
+} from "../contexts/ProductContext";
 
 const Product = ({ navigation }: ProductStackProps) => {
+  const { setProduct } = useContext(ProductContext);
+
   const productItem: ProductType = {
     id: "a1b2c3d4",
     name: "Notebook",
@@ -11,7 +18,8 @@ const Product = ({ navigation }: ProductStackProps) => {
   };
 
   const goDetails = () => {
-    navigation.navigate("Details", productItem);
+    setProduct(productItem);
+    navigation.navigate("Details");
   };
 
   return (

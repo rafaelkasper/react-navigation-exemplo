@@ -1,9 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Product } from "./product";
 
 export type StackParamList = {
   Product: undefined;
-  Details: Product;
+  Details: undefined;
 };
 
 export type ProductStackProps = NativeStackScreenProps<

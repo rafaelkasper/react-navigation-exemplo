@@ -1,20 +1,23 @@
 import { Text, View, StyleSheet, Button } from "react-native";
 import { DetailsStackProps } from "../types/navigation";
-import { Product } from "../types/product";
-import { useRoute } from "@react-navigation/native";
+import { useContext } from "react";
+import { ProductContext } from "../contexts/ProductContext";
 
 const Details = ({ navigation }: DetailsStackProps) => {
-  const route = useRoute();
-  const { name, description, cost } = route.params as Product;
+  const { product, insertCart } = useContext(ProductContext);
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>Details</Text>
-        <Text style={styles.description}>Nome: {name}</Text>
-        <Text style={styles.description}>Descrição: {description}</Text>
-        <Text style={styles.description}>Valor: {cost}</Text>
+        <Text style={styles.description}>Nome: {product.name}</Text>
+        <Text style={styles.description}>Descrição: {product.description}</Text>
+        <Text style={styles.description}>Valor: {product.cost}</Text>
         <Button title="Voltar" onPress={() => navigation.goBack()} />
+        <Button
+          title="Adicionar ao carrinho"
+          onPress={() => insertCart(product)}
+        />
       </View>
     </View>
   );
