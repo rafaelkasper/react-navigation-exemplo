@@ -3,7 +3,7 @@ import { ProductStackProps } from "../types/navigation";
 import { Product as ProductType } from "../types/product";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
-import { ThemeContext } from "../contexts/Theme";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Product = ({ navigation }: ProductStackProps) => {
   const { setProduct } = useContext(ProductContext);

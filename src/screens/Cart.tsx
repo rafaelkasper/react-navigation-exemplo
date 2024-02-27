@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import { ThemeContext } from "../contexts/Theme";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { dark, light } from "../constants/theme";
 
 const Cart = () => {
