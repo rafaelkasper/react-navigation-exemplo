@@ -2,13 +2,14 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { ProductStackProps } from "../types/navigation";
 import { Product as ProductType } from "../types/product";
 import { useContext } from "react";
-import {
-  ProductContext,
-  ProductContextProvider,
-} from "../contexts/ProductContext";
+import { ProductContext } from "../contexts/ProductContext";
+import { ThemeContext } from "../contexts/Theme";
 
 const Product = ({ navigation }: ProductStackProps) => {
   const { setProduct } = useContext(ProductContext);
+  const { setTheme } = useContext(ThemeContext);
+
+  // setTheme("dark");
 
   const productItem: ProductType = {
     id: "a1b2c3d4",
